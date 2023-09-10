@@ -10,7 +10,7 @@
         public int speedX = 1;
         public int speedY;
         public int topLimit;
-        public int moveLimit;
+        private int moveLimit;
 
         public Image bubble;
         Random random = new Random();

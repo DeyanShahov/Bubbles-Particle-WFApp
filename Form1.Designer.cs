@@ -43,6 +43,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 461);
+            DoubleBuffered = true;
             Name = "Form1";
             Text = "Bobbles";
             Paint += FormPaintEvent;

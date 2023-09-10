@@ -12,9 +12,7 @@ namespace Bubbles_Particle_WFApp
         public Form1()
         {
             InitializeComponent();
-
-            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
-
+      
             SetUp();
 
             MakeBubbles();
@@ -22,7 +20,9 @@ namespace Bubbles_Particle_WFApp
 
         public void SetUp()
         {
-            foreach(string backgroundPath in ImageFactory.Backgrounds)
+            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.UserPaint, true);
+
+            foreach (string backgroundPath in ImageFactory.Backgrounds)
             {
                 Image tempBack = Image.FromFile(backgroundPath);
                 backgroundList.Add(tempBack);
@@ -35,7 +35,20 @@ namespace Bubbles_Particle_WFApp
 
         private void ParticlesTimerEvent(object sender, EventArgs e)
         {
+            foreach (Bubble bubble in bubbleList)
+            {
+                bubble.MoveBubble();
+                bubble.posY -= bubble.speedY;
+                bubble.posX += bubble.speedX;
 
+                if (bubble.posY < bubble.topLimit)
+                {
+                    bubble.posY = 700;
+                    bubble.posX = random.Next(0, 800);
+                }
+            }
+
+            this.Invalidate();
         }
 
         private void KeyIsUp(object sender, KeyEventArgs e)
@@ -47,17 +60,29 @@ namespace Bubbles_Particle_WFApp
 
                 background = backgroundList[backgroundNumber];
                 this.BackgroundImage = background;
-            }       
+            }
         }
 
         private void FormPaintEvent(object sender, PaintEventArgs e)
         {
+            Graphics Canvas = e.Graphics;
 
+            //Canvas.DrawImage(background, 0, 0, 800, 500);
+
+            foreach (Bubble tempBubble in bubbleList)
+            {
+                Canvas.DrawImage(tempBubble.bubble, tempBubble.posX, tempBubble.posY,
+                    tempBubble.width, tempBubble.height);
+            }
         }
 
         private void MakeBubbles()
         {
-
+            for (int i = 0; i < 300; i++)
+            {
+                Bubble newBubble = new Bubble();
+                bubbleList.Add(newBubble);
+            }
         }
     }
 }
