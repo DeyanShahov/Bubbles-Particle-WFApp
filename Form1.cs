@@ -11,5 +11,20 @@ namespace Bubbles_Particle_WFApp
         {
 
         }
+
+        private void KeyIsUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void FormPaintEvent(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void MakeBubbles()
+        {
+
+        }
     }
 }

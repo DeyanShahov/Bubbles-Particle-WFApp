@@ -45,6 +45,8 @@
             ClientSize = new Size(784, 461);
             Name = "Form1";
             Text = "Bobbles";
+            Paint += FormPaintEvent;
+            KeyUp += KeyIsUp;
             ResumeLayout(false);
         }
 
