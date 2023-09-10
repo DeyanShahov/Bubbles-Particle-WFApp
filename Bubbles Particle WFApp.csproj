@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Bubbles_Particle_WFApp</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\01.jpg" />
+    <None Remove="Assets\02.jpg" />
+    <None Remove="Assets\03.jpg" />
+    <None Remove="Assets\04.jpg" />
+    <None Remove="Assets\05.jpg" />
+    <None Remove="Assets\bubble.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\01.jpg" />
+    <Resource Include="Assets\02.jpg" />
+    <Resource Include="Assets\03.jpg" />
+    <Resource Include="Assets\04.jpg" />
+    <Resource Include="Assets\05.jpg" />
+    <Resource Include="Assets\bubble.png" />
+  </ItemGroup>
+
+</Project>
