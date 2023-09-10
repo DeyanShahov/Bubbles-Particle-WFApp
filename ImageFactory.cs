@@ -5,9 +5,8 @@
         private static readonly string assetsPath = Path.Combine(Application.StartupPath)
            .Replace("bin\\Debug\\net6.0-windows\\", "Assets\\");
 
-        //public readonly static Image Background = GetImage("bg.jpg");
+        public readonly static List<string> Backgrounds = GetFilePath("jpg");
 
-        //public readonly static List<string> Image = GetFilePath("png");
         public readonly static Image Image = GetImage("bubble.png");
 
 
